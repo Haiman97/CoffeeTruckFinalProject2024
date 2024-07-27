@@ -2,7 +2,6 @@ package com.example.coffeetruckfinalproject2024
 
 
 import android.widget.*
-import com.example.CoffeeTruckFinalProject2024.databinding.FragmentAddCoffeeTruckBinding
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -59,15 +58,4 @@ class AddCoffeeTruckFragment : Fragment() {
     }
 }
 
-Step 3: Navigation (Optional)
 
-If you are using Jetpack Navigation, ensure you have the navigation set up in your nav_graph.xml:
-
-xml
-
-<fragment
-android:id="@+id/addCoffeeTruckFragment"
-android:name="com.example.yourapp.AddCoffeeTruckFragment"
-android:label="Add Coffee Truck">
-<!-- Add any necessary arguments here -->
-</fragment>
