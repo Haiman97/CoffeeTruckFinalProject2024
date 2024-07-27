@@ -1,6 +1,7 @@
 package com.example.coffeetruckfinalproject2024
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,8 +23,14 @@ class CoffeeTruckListView : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        coffeeTruckList = findViewById(R.id.lvCoffeeTruckFeed)
-        coffeeTruckList?.adapter = CoffeeTruckListAdapter()
+        Log.d("CoffeeTruckListView", "onCreate called")
+        try {
+            coffeeTruckList = findViewById(R.id.lvCoffeeTruckFeed)
+            coffeeTruckList?.adapter = CoffeeTruckListAdapter()
+        } catch (e: Exception) {
+            // Log the exception with the error level
+            Log.e("CoffeeTruckListView", "Error initializing ListView", e)
+        }
     }
     //Adapter Creation
     class CoffeeTruckListAdapter:BaseAdapter(){
@@ -35,14 +42,18 @@ class CoffeeTruckListView : AppCompatActivity() {
             return 0
         }
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            var view : View? = null
+            var view :View? = null
+            //var rowView = convertView
             if(convertView == null){
                 view = LayoutInflater.from(parent?.context).inflate(R.layout.coffeetruckrow,parent,false)
             }
-            //view= view?:convertView
+            //view = view?:convertView
             val tvRowName :TextView? = view?.findViewById(R.id.tvRowName) ?:
-                convertView?.findViewById(R.id.tvRowName)
-            tvRowName?.text = "Test"
+            convertView?.findViewById(R.id.tvRowName)
+            //val tvRowName :TextView? = view?.findViewById(R.id.tvRowName) ?:
+            //val coffeeTruck = data[position]
+            tvRowName?.text = "Coffee Truck Name"
+            val tvRowLocaion = view?.findViewById<TextView>(R.id.tvRowLocation)
             return view ?: convertView!!
         }
     }
