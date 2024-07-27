@@ -1,5 +1,6 @@
 package com.example.coffeetruckfinalproject2024
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -57,4 +58,43 @@ class CoffeeTruckListView : AppCompatActivity() {
             return view ?: convertView!!
         }
     }
-}
+
+
+
+    /*class CoffeeTruckListAdapter : BaseAdapter() {
+
+        // Replace 20 with your actual data count
+        override fun getCount(): Int = 20
+
+        // These methods are not strictly necessary for a simple list but can be used for
+        // advanced functionality. They can return any value here.
+        override fun getItem(position: Int): Any {
+            return position
+        }
+
+        override fun getItemId(position: Int): Long {
+            return position.toLong()
+        }
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            val view: View = convertView ?: LayoutInflater.from(parent?.context).inflate(R.layout.coffeetruckrow, parent, false)
+
+            // Find TextViews using their IDs
+            val tvRowName: TextView = view.findViewById(R.id.tvRowName)
+            val tvRowLocation: TextView = view.findViewById(R.id.tvRowLocation)
+            Log.d("CoffeeTruckListView", "tvrowname & tvrowlocation V")
+
+            // Replace with your actual data source (e.g., fetch from API or database)
+            tvRowName.text = "Coffee Truck Name - $position"  // Add position for demonstration
+            tvRowLocation.text = "Coffee Truck Location - $position"
+            Log.d("CoffeeTruckListView", "text in vars")
+
+            return view
+        }*/
+    }
+
+
+
+
+
+
