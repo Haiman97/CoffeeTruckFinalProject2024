@@ -10,14 +10,14 @@ import android.view.ViewGroup
 
 class AddCoffeeTruckFragment : Fragment() {
 
-    private var _binding: FragmentAddCoffeeTruckBinding? = null
+    private var _binding: FragmentAddaNewCoffeeTruckBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentAddCoffeeTruckBinding.inflate(inflater, container, false)
+        _binding = FragmentAddaNewCoffeeTruckBinding.inflate(inflater, container, false)
         return binding.root
     }
 
