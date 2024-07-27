@@ -9,6 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.coffeetruckfinalproject2024"
+        //minSdk = 34
         minSdk = 34
         targetSdk = 34
         versionCode = 1
