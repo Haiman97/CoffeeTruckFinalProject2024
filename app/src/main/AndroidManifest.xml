@@ -17,7 +17,9 @@
             android:exported="false" />
         <activity
             android:name=".CoffeeTruckListView"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light"
+            >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +31,7 @@
             android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.CoffeeTruckFinalProject2024">
+
 
         </activity>
     </application>
