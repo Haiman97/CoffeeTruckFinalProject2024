@@ -8,8 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-
-class AddCoffeeTruckFragment : Fragment() {
+class AddaNewCoffeeTruckFragment : Fragment() {
 
     private var _binding: FragmentAddaNewCoffeeTruckBinding? = null
     private val binding get() = _binding!!
@@ -25,37 +24,28 @@ class AddCoffeeTruckFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonSubmit.setOnClickListener {
+        binding.buttonSubmit.setOnClickListener{
+            // איסוף הנתונים מהשדות
             val name = binding.editTextName.text.toString()
             val location = binding.editTextLocation.text.toString()
-            val kosher = when (binding.radioGroupKosher.checkedRadioButtonId) {
-                R.id.radioKosher -> "Kosher"
-                R.id.radioNonKosher -> "Non-Kosher"
-                else -> ""
-            }
+            val kosher = binding.editTextKosher.text.toString()
             val openingHours = binding.editTextOpeningHours.text.toString()
             val recommendations = binding.editTextRecommendations.text.toString()
             val tripSuggestions = binding.editTextTripSuggestions.text.toString()
             val reviews = binding.editTextReviews.text.toString()
 
-            // Logic to handle photo addition goes here
-
-            if (name.isNotEmpty() && location.isNotEmpty()) {
-                // Save the data (e.g., to a database or a server)
-                Toast.makeText(requireContext(), "Coffee Truck added!", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(requireContext(), "Please fill in all required fields.", Toast.LENGTH_SHORT).show()
-            }
+            // יצירת אובייקט עגלת הקפה
+            val newCoffeeTruck = CoffeeTruck(
+                name = name,
+                location = location,
+                kosher = kosher,
+                openingHours = openingHours,
+                photos = null, // ניתן להוסיף תמונה כאן אם יש צורך
+                recommendations = recommendations,
+                tripSuggestions = tripSuggestions,
+                reviews = reviews
+            )
         }
-
-        binding.buttonAddPhotos.setOnClickListener {
-            // Logic to add photos
-        }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
 

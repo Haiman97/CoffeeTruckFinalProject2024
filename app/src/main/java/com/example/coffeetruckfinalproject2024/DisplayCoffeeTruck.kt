@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-
 class DisplayCoffeeTruckFragment : Fragment() {
 
     private var _binding: FragmentDisplayCoffeeTruckBinding? = null
@@ -23,7 +22,7 @@ class DisplayCoffeeTruckFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Retrieve coffee truck details from arguments or a ViewModel
+        // קבלת אובייקט CoffeeTruck מה-Arguments
         val coffeeTruck = arguments?.getParcelable<CoffeeTruck>("coffeeTruck")
 
         coffeeTruck?.let {
@@ -31,7 +30,6 @@ class DisplayCoffeeTruckFragment : Fragment() {
             binding.textViewLocation.text = it.location
             binding.textViewKosher.text = it.kosher
             binding.textViewOpeningHours.text = it.openingHours
-            binding.imageViewPhotos.setImageBitmap(it.photos) // Assuming you have a way to handle photos
             binding.textViewRecommendations.text = it.recommendations
             binding.textViewTripSuggestions.text = it.tripSuggestions
             binding.textViewReviews.text = it.reviews
